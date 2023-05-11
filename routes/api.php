@@ -2,11 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API;
+use App\Http\Controllers\API\ProductApiController;
 
 
-
-Route::post('products',[App\Http\Controllers\API\ProductApiController::class,'store']);
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +20,5 @@ Route::post('products',[App\Http\Controllers\API\ProductApiController::class,'st
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('products',[ProductApiController::class,'store']);
