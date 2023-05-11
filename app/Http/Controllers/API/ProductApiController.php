@@ -23,17 +23,20 @@ class ProductApiController extends Controller
     }
     
     else{
-        $product=new Product;
-        $product=new $request->name;
-        $product=new $request->description;
+    
+        $product=new product;
+        $product->name=$request->name;
+        $product->description=$request->description;
         $product->save();
+  
 
         return response()->json([
             'status'=>200,
             'message'=>'Student Created Successfully'
         ], 200);
+  
     }
-
+    
     
 }
 }    
