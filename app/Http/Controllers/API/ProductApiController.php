@@ -28,7 +28,6 @@ class ProductApiController extends Controller
         $product->name=$request->name;
         $product->description=$request->description;
         $product->save();
-  
 
         return response()->json([
             'status'=>200,
@@ -36,8 +35,19 @@ class ProductApiController extends Controller
         ], 200);
   
     }
+
     
     
+}
+
+public function list()
+{
+    $list=product::all();
+
+    return response()->json([
+    'list'=>$list,
+    'status'=>1
+    ]);
 }
 }    
                                                                                                                             
