@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ProductApiController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\API\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::get('list',[ProductApiController::class,'list']);
 Route::get('list/{id}',[ProductApiController::class,'show']);
 Route::put('list/{id}/update',[ProductApiController::class,'update']);
 Route::delete('list/{id}/delete',[ProductApiController::class,'delete']);
+Route::post('register',[UserController::class,'group']);
